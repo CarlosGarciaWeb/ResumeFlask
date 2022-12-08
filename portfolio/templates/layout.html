@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% block title %}
+    <title>Carlos García</title>
+    {% endblock title %}
+</head>
+<body>
+    <header class="header">
+        <h1>Carlos García</h1>
+        <nav class="nav">
+            <a href="{{ url_for('home') }}" class="nav__links">Projects</a>
+            <a href="{{ url_for('about') }}" class="nav__links">About</a>
+            <a href="{{ url_for('contact') }}" class="nav__links">Contact me</a>
+        </nav>
+    </header>
+    <main class="main">
+        {% block content %}
+        {% endblock content}
+    </main>
+</body>
+</html>
