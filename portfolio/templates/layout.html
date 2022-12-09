@@ -6,14 +6,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{{url_for('static', filename='css/styles.css') }}">
     {% block title %}
-    <title>Carlos García</title>
+    <title>Carlos García | Portfolio</title>
     {% endblock title %}
 </head>
 <body>
     <header class="header">
-        <h1>Carlos García</h1>
+        <a class="nav__link nav__link--main" href="{{ url_for('home') }}">Home</a>
         <nav class="nav">
-            <a href="{{ url_for('home') }}" class="nav__link {{ 'nav__link--active' if request.path == url_for('home')}}">Projects</a>
+            <a href="{{ url_for('projects') }}" class="nav__link {{ 'nav__link--active' if request.path == url_for('projects')}}">Projects</a>
             <a href="{{ url_for('about') }}" class="nav__link {{ 'nav__link--active' if request.path == url_for('about')}}">About</a>
             <a href="{{ url_for('contact') }}" class="nav__link {{ 'nav__link--active' if request.path == url_for('contact')}}">Contact me</a>
         </nav>
