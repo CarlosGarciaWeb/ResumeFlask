@@ -3,7 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=0.75">
+    <script src="https://kit.fontawesome.com/6a2f48a367.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="{{url_for('static', filename='css/bootstrap.min.css') }}">
     <link rel="stylesheet" href="{{url_for('static', filename='css/styles.css') }}">
     {% block title %}
     <title>Carlos García | Portfolio</title>
@@ -11,16 +13,13 @@
 </head>
 <body>
     <header class="header">
-        <a class="nav__link nav__link--main" href="{{ url_for('home') }}">Home</a>
-        <nav class="nav">
-            <a href="{{ url_for('projects') }}" class="nav__link {{ 'nav__link--active' if request.path == url_for('projects')}}">Projects</a>
-            <a href="{{ url_for('about') }}" class="nav__link {{ 'nav__link--active' if request.path == url_for('about')}}">About</a>
-            <a href="{{ url_for('contact') }}" class="nav__link {{ 'nav__link--active' if request.path == url_for('contact')}}">Contact me</a>
-        </nav>
+
     </header>
     <main class="main">
         {% block content %}
         {% endblock content%}
     </main>
+    <script src="{{url_for('static', filename='js/bootstrap.bundle.min.js')}}"></script>
+    <script src="{{url_for('static', filename='js/scripts.js')}}"></script>
 </body>
 </html>

@@ -1,29 +1,81 @@
 {% extends 'layout.html' %}
 
 
-{% block title %}
-<title>Carlos García | Portfolio</title>
-{% endblock title %}
-
-
-<img src="../static/images/selfie.jpeg" alt="Carlos Garcia (me: want to be software developer)">
-
-
 {% block content %}
 
 
-<main class="main main--home">
-    <section class="main__home--intro">
-        <section class="main__home--content">
-            <img class="main__home--selfiepic" src="../static/images/selfie.jpeg" alt="This is me. Carlos Garcia. Want to be programmer.">
-            <section class="main__content--intro">
-                <div class="main__content--intro1">Hello! My name is Carlos Garcia.</div>
-                <div class="main__content--intro2">Welcome to my portfolio.</div>
-                <div class="main__content--intro3">I am a Python backend developer.</div>
-            </section>
-        </section>
+<!-- Intro -->
+    <section class="intro position-relative" id="home"
+    style="background-image: url('static/images/background.png'); width: 100%;">
+        <div class="intro__container container py-5 min-vh-100">
+            <h1 class="intro__site--title">Hello, I am <span class="intro__text--name">Carlos García</span>!</h1>
+            <p class="typewriter"><strong>Welcome to my portfolio.</strong></p>
+        </div>
+        <a href="#about" class="scroll-down-arrow position-absolute">
+            <span class="animated">
+                <i class="fas fa-chevron-down"> </i>
+            </span>
+        </a>
     </section>
-    <section class="main__content--experience"></section>
-</main>
+
+<!-- About -->
+
+    <section class="about" id="about">
+        <div class="about__container container py-5">
+            <div class="about__row row py-5">
+                <div class="row__col--img col-lg-5 pb-5 pg-lg-0">
+                    <img src="{{url_for('static', filename='images/img1.png')}}" alt="coder section image" class="img-fluid">
+                </div>  
+                <div class="row__col--text col-lg-7">
+                    <h2 class="col__title">About me</h2>
+                    <p class="col__text">I shifted my career after over 4 years as an Accounts Receivable
+                        Specialist to a backend developer. I got into web development by accident when I purchased a web development course
+                        on udemy in order to improve at an SEO freelance project I was doing. Then I fell in love with it while researching how
+                        to automate a process that required filling out customer web forms at a previous experience in Accounts Receivable. I found out I could do it by using Python and the Selenium Webdriver library, 
+                        so I bought another course and developed a script that would pull data from excel (with the pandas library) and then fill out the require information through a loop into the web form.
+                    </p>
+                    <p class="col__text"> Since then, it became a hobby of mine to study programming after work. In November I took the risk to quit and pursue my dreams. Now I have done several projects in Python with Django and Flask, as well as Golang with Gin, and a couple
+                        of projects with Rust. I want to become a backend developer, the best I can, using cloud providers like AWS, GCP, Azure and new serverless technologies like AWS Lambda.
+                    </p>
+                    <ul class="col__tab--header nav nav-tabs my-4" id="tab">
+                        {% for keys in skills_experiences.keys() %}
+                        <li class="nav__item nav-item">
+                            <a href="{{url_for('home', tab=keys)}}#{{keys}}" class="nav__link nav-link {{'active active__tab' if active_tab == keys }}">{{keys}}</a>
+                        </li>
+                        {% endfor %}
+                    </ul>
+                    <div class="col__tab--content tab-content">
+                        {% for item_key, item_value in selected_tab_dict.items() %}
+                        <div class="content__pane tab-pane active active__content" id="{{active_tab}}">
+                            <ul class="list-unstyled">
+                                <li class="pane__title"><strong>{{item_key}}</strong></li>
+                                <li  class="pane__text">{{item_value}}</li>
+                            </ul>
+                        </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+<!-- Projects -->
+
+    <section class="projects" id="projects">
+        <div class="projects__container container py-5">
+            <div class="projects__row row py-5">
+                <div class="project__card card" style="width: 18rem;">
+                    <img class="card-img-top" src="..." alt="Card image cap">
+                    <div class="card-body">
+                      <h5 class="card-title">Card title</h5>
+                      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                      <a href="#" class="btn btn-primary">Read more</a>
+                      <a href="#" class="btn btn-primary">View Project</a>
+                    </div>
+                  </div>
+            </div>
+        </div>
+    </section>
 
 {% endblock content %}
