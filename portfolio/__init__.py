@@ -1,5 +1,4 @@
 from flask import Flask, render_template, request, redirect, url_for
-from pymongo import MongoClient
 from dotenv import load_dotenv
 import os
 
@@ -7,9 +6,6 @@ load_dotenv()
 
 app = Flask(__name__)
 
-mongo_address = os.getenv("MONGODB_ADDRESS")
-
-client = MongoClient(mongo_address)
 print(2)
 
 aboutme_dict = {

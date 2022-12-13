@@ -80,6 +80,43 @@ strong {
 /* about--section Styling */
 
 
+.scroll__div {
+    justify-items: center;
+}
+
+.scroll__project,
+.scroll__experiences,
+.scroll__recognitions,
+.scroll__contact,
+.scroll__project__720 {
+    position: relative;
+    bottom: 40px;
+}
+
+.scroll__project__720 {
+    bottom: 0;
+}
+
+@media (max-width: 720px){
+    .scroll__project {
+        display: none;
+    }
+
+    .col__img {
+        width: 90%;
+    }
+}
+
+
+@media (min-width: 720px) {
+    .scroll__experiences {
+        display: none;
+    }
+
+    .scroll__project__720 {
+        display: none;
+    }
+}
 
 .col__title {
     text-align: center;
@@ -138,3 +175,19 @@ strong {
     color: #222222;
 }
 
+
+.animated__up {
+    position: relative;
+    animation: fadeInUp 2s infinite;
+}
+
+@keyframes fadeInUp {
+    0% {
+        top: 20px;
+        opacity: 0;
+    }
+    100% {
+        top: -10px;
+        opacity: 1;
+    }
+}

@@ -13,7 +13,7 @@
         </div>
         <a href="#about" class="scroll-down-arrow position-absolute">
             <span class="animated">
-                <i class="fas fa-chevron-down"> </i>
+                <i class="fas fa-chevron-down fa-2x"> </i>
             </span>
         </a>
     </section>
@@ -25,8 +25,20 @@
             <div class="about__row row py-5">
                 <div class="row__col--img col-lg-5 pb-5 pg-lg-0">
                     <img src="{{url_for('static', filename='images/img1.png')}}" alt="coder section image" class="img-fluid">
+                    <div class="scroll__div">
+                        <a href="#projects" class="scroll-down-arrow scroll__project">
+                            <span class="animated">
+                                <i class="fas fa-chevron-down fa-2x"> </i>
+                            </span>
+                        </a>
+                        <a href="#about__text" class="scroll-down-arrow scroll__experiences">
+                            <span class="animated">
+                                <i class="fas fa-chevron-down fa-2x"> </i>
+                            </span>
+                        </a>
+                    </div>
                 </div>  
-                <div class="row__col--text col-lg-7">
+                <div class="row__col--text col-lg-7" id="about__text">
                     <h2 class="col__title">About me</h2>
                     <p class="col__text">I shifted my career after over 4 years as an Accounts Receivable
                         Specialist to a backend developer. I got into web development by accident when I purchased a web development course
@@ -40,7 +52,7 @@
                     <ul class="col__tab--header nav nav-tabs my-4" id="tab">
                         {% for keys in skills_experiences.keys() %}
                         <li class="nav__item nav-item">
-                            <a href="{{url_for('home', tab=keys)}}#about" class="nav__link nav-link {{'active active__tab' if active_tab == keys }}">{{keys}}</a>
+                            <a href="{{url_for('home', tab=keys)}}#about__text" class="nav__link nav-link {{'active active__tab' if active_tab == keys }}">{{keys}}</a>
                         </li>
                         {% endfor %}
                     </ul>
@@ -54,6 +66,13 @@
                         </div>
                         {% endfor %}
                     </div>
+                </div>
+                <div class="scroll__div">
+                    <a href="#projects" class="scroll-down-arrow scroll__project__720">
+                        <span class="animated">
+                            <i class="fas fa-chevron-down fa-2x"> </i>
+                        </span>
+                    </a>
                 </div>
             </div>
         </div>
@@ -85,6 +104,13 @@
                     </div>
                   </div>
                 {% endfor %}
+            </div>
+            <div class="scroll__div">
+                <a href="#recognitions" class="scroll-down-arrow scroll__recognitions">
+                    <span class="animated">
+                        <i class="fas fa-chevron-down fa-2x"> </i>
+                    </span>
+                </a>
             </div>
         </div>
     </section>
@@ -121,6 +147,13 @@
                         <p class="col__text">As a team-player I am always there to help solve problems or give assistance with technical questions to my team. However, rather than solve problems for my team I usually prefer to teach them how to arrive to a solution and how to implement it.</p>
                     </div>  
                 </div>
+                <div class="scroll__div">
+                    <a href="#contact" class="scroll-down-arrow scroll__contact">
+                        <span class="animated">
+                            <i class="fas fa-chevron-down fa-2x"> </i>
+                        </span>
+                    </a>
+                </div>
             </div>
     </section>
 
@@ -129,7 +162,7 @@
 
 <!-- social and contact section -->
 
-    <section class="contact">
+    <section class="contact" id="contact">
     <div class="mb-4">
 
         <h2 class="col__title m-5">Interested in hiring a self-starter and commited professional?</h2>
@@ -168,6 +201,9 @@
           <div class="col-md-4 d-flex align-items-center">
             <a href="/" class="mb-3 me-2 mb-md-0 text-muted text-decoration-none lh-1">
               <svg class="bi" width="30" height="24"><use xlink:href="#bootstrap"/></svg>
+              <span class="animated__up">
+                <i class="fas fa-chevron-up fa-2x"> </i>
+              </span>
             </a>
             <span class="mb-3 mb-md-0 text-muted">&copy; Carlos García 2022</span>
           </div>
