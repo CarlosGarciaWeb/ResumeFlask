@@ -10,7 +10,7 @@ app = Flask(__name__)
 mongo_address = os.getenv("MONGODB_ADDRESS")
 
 client = MongoClient(mongo_address)
-print(1)
+print(2)
 
 aboutme_dict = {
     "My Skills": {
@@ -40,14 +40,40 @@ aboutme_dict = {
     #     "prod": "link to project"
     # }
 
-projects_dict = [
+projects_list = [
     {
         "name": "Python Novice Blog",
-        "thumb": "",
+        "thumb": "images/pynoviceblog.png",
         "hero": "",
-        "categories": [],
+        "categories": ["Python", "Django", "PostgreSQL", "Heroku"],
+        "slug": "django-blog-website",
+        "prod": "https://www.pythonnoviceblog.com/"
+    },
+        {
+        "name": "Portfolio - Carlos García",
+        "thumb": "images/portfolio.png",
+        "hero": "",
+        "categories": ["Python", "Flask", "MongoDB", "AWS"],
         "slug": "portfolio-website",
-        "prod": ""
+        "prod": "#"
+    }
+]
+
+recognition_list = [
+    {
+        "type": "Customer Recognition",
+        "text": "Recognition made by customer to team lead, for having a customer happiness oriented service.",
+        "img": "images/recognitions1.png"
+    },
+    {
+        "type": "Peer Recognition",
+        "text": "Recognition made by peers for being goal oriented and fixing issues from the root cause.",
+        "img": "images/recognitions2.png"
+    },
+    {
+        "type": "Leadership Recognition",
+        "text": "Recognition made by manager to the whole the company due to innovative thinking and performance.",
+        "img": "images/recognitions3.png"
     }
 ]
 
@@ -65,9 +91,14 @@ def home():
 
     selected_tab_dict = aboutme_dict[active_tab]
 
-    return render_template("home.html", skills_experiences=aboutme_dict, active_tab=active_tab, selected_tab_dict=selected_tab_dict)
-
-
+    return render_template(
+        "home.html",
+        skills_experiences=aboutme_dict, 
+        active_tab=active_tab, 
+        selected_tab_dict=selected_tab_dict,
+        projects_list=projects_list,
+        recognition_list=recognition_list
+    )
 
 
 

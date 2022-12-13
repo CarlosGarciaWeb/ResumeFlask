@@ -8,6 +8,11 @@
 
 /* General Styling */
 
+
+body {
+    background-color: #a6bdc4;
+}
+
 h1 {
     font-weight: 900;
 }
@@ -17,7 +22,14 @@ strong {
 }
 
 
-
+.sep {
+    width: 80%;
+    border: 0;
+    height: 2px;
+    background: #222222;
+    margin: auto;
+    background-image: linear-gradient(to right, #ccc, #222222, #ccc);
+}
 
 /* intro--section Styling */
 
@@ -68,22 +80,12 @@ strong {
 /* about--section Styling */
 
 
-.about {
-    background-color: #a6bdc4;
-}
-
 
 .col__title {
     text-align: center;
-}
-
-.col__title {
     font-weight: 900;
-    margin: 2rem 0;
+    margin: 0 0 2rem 0;
 }
-
-
-
 
 .nav__link:not(.active) {
     color: #222222;
@@ -94,3 +96,45 @@ strong {
     background-color: #222222;
     color: azure;
 }
+
+/* project--section Styling */
+
+.project__title {
+    text-align: center;
+    font-weight: 900;
+    margin: 2rem 0;
+}
+
+.button__project {
+    background-color: azure;
+    color: #222222;
+}
+
+.button__project:hover {
+    background-color: #222222;
+    color: azure;
+}
+
+
+
+/* recognition--section Styling */
+
+
+.col__img {
+    display: flex;
+    justify-self: center;
+}
+
+
+/* contact--section Styling */
+
+
+.contact__list {
+    margin: 2rem;
+}
+
+.contact__link {
+    text-decoration: none;
+    color: #222222;
+}
+

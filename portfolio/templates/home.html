@@ -9,7 +9,7 @@
     style="background-image: url('static/images/background.png'); width: 100%;">
         <div class="intro__container container py-5 min-vh-100">
             <h1 class="intro__site--title">Hello, I am <span class="intro__text--name">Carlos García</span>!</h1>
-            <p class="typewriter"><strong>Welcome to my portfolio.</strong></p>
+            <p class="typewriter"><strong>Welcome to my portfolio. <br>I am a backend Developer.</strong></p>
         </div>
         <a href="#about" class="scroll-down-arrow position-absolute">
             <span class="animated">
@@ -40,7 +40,7 @@
                     <ul class="col__tab--header nav nav-tabs my-4" id="tab">
                         {% for keys in skills_experiences.keys() %}
                         <li class="nav__item nav-item">
-                            <a href="{{url_for('home', tab=keys)}}#{{keys}}" class="nav__link nav-link {{'active active__tab' if active_tab == keys }}">{{keys}}</a>
+                            <a href="{{url_for('home', tab=keys)}}#about" class="nav__link nav-link {{'active active__tab' if active_tab == keys }}">{{keys}}</a>
                         </li>
                         {% endfor %}
                     </ul>
@@ -60,22 +60,130 @@
     </section>
 
 
+    <hr class="sep">
+
 <!-- Projects -->
 
     <section class="projects" id="projects">
         <div class="projects__container container py-5">
-            <div class="projects__row row py-5">
-                <div class="project__card card" style="width: 18rem;">
-                    <img class="card-img-top" src="..." alt="Card image cap">
+            <div class="projects__row row justify-content-center py-5">
+                <h2 class="project__title">Projects</h2>
+                <p style="text-align: center;" class="col__text">Here you can review the different projects I've build with the aim to learn tools, languages and technologies.</p>
+                {% for project in projects_list %}
+                <div class="project__card card col-lg-5 py-2 m-5" style="width: 18rem;">
+                    <img class="card-img-top" src="{{url_for('static', filename=project['thumb'])}}" alt="{{project['name']}} hero image">
                     <div class="card-body">
-                      <h5 class="card-title">Card title</h5>
-                      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                      <a href="#" class="btn btn-primary">Read more</a>
-                      <a href="#" class="btn btn-primary">View Project</a>
+                      <h5 class="card-title">{{project['name']}}</h5>
+                      <p class="card-text text-align-center">Technologies/Language Used: 
+                        {% for tech in project['categories'] %}
+                            <br>
+                            {{tech}}
+                        {% endfor %}
+                      </p>
+                      <a href="{{url_for('home')}}" class="button__project btn btn-primary">Read more</a>
+                      <a href="{{project['prod']}}" class="button__project btn btn-primary">View Project</a>
                     </div>
                   </div>
+                {% endfor %}
             </div>
         </div>
     </section>
+
+
+    <hr class="sep">
+
+<!-- recognitions -->
+
+    <section class="recognitions" id="recognitions">
+
+            <div class="about__container container py-5">
+                <div class="about__row row py-5">
+                    <div class="row__col--text col-lg-7">
+                        <h2 class="col__title">Recognitions</h2>
+                        <p class="col__text">Throught my career as an Accounts Receivable Specialist I've received numerous recognitions from customers, peers and leaders. I always aim 
+                            to become a subject matter expert at what I do. I am data-driven, result-oriented, customer-centered, and a team-player. 
+                        </p>
+                        <br>
+                        <h5 class="col__title">Customer Recognition</h5>
+                        <img style="margin: 1rem auto;" class="col__img" src="{{url_for('static', filename='images/recognitions1.png')}}" alt="Customer Recognition Hero Image">
+                        <p class="col__text">I love being able to help anyone and everyone. Whether it is a customer or internal stakeholder. I also, try to always give a response on time and act on urgent requirements immediately.</p>
+                        <br>
+                        <h5 class="col__title">Leadership Recognition</h5>
+                        <img style="margin: 1rem auto;" class="col__img" src="{{url_for('static', filename='images/recognitions3.png')}}" alt="Customer Recognition Hero Image">
+                        <p class="col__text">I started to learn recently that many consider my as innovative and I love it. I love looking at different ways to solve problems that can improve drastically the efficiency of processes.</p>
+                    </div>
+                    <div class="row__col--img col-lg-5 pb-5 pg-lg-0">
+                        <img style="margin: 1rem auto;" class="col__img" src="{{url_for('static', filename='images/icon2.png')}}" alt="coder section image">
+                        <br>
+                        <h5 class="col__title">Recognitions from Peers</h5>
+                        <img style="margin: 1rem auto;" class="col__img" src="{{url_for('static', filename='images/recognitions2.png')}}" alt="Peer Recognitions Hero Image">
+                        <img style="margin: 1rem auto;" class="col__img" src="{{url_for('static', filename='images/recognitions4.png')}}" alt="Peer Recognitions Hero Image 2">
+                        <p class="col__text">As a team-player I am always there to help solve problems or give assistance with technical questions to my team. However, rather than solve problems for my team I usually prefer to teach them how to arrive to a solution and how to implement it.</p>
+                    </div>  
+                </div>
+            </div>
+    </section>
+
+    <hr class="sep">
+
+
+<!-- social and contact section -->
+
+    <section class="contact">
+    <div class="mb-4">
+
+        <h2 class="col__title m-5">Interested in hiring a self-starter and commited professional?</h2>
+        <p class="text-center w-responsive mx-auto mb-5">Below you can find my github, linkedin and email. Feel free to reach out.</p>
+
+        <div class="row">
+
+            <div class="col text-center">
+                <ul class="list-unstyled mb-1">
+                    <li class="contact__list"><a class="contact__link" href="https://github.com/CarlosGarciaWeb"><i class="fa-brands fa-github-alt fa-2x"></i>
+                        <br>@CarlosGarciaWeb
+                    </li>
+                    <li class="contact__list"><a class="contact__link" href="https://www.linkedin.com/in/carlos-garciaram/"><i class="fa-brands fa-linkedin-in fa-2x"></i>
+                        <br>@carlos-garciaram
+                    </li>
+                    <li class="contact__list"><a class="contact__link" href="mailto:carlosagrh95@gmail.com"><i class="fa-regular fa-envelope fa-2x"></i>
+                        <br>
+                        carlosagrh95 ~ @ ~ gmail.com
+                    </li>
+                </ul>
+            </div>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- footer -->
+
+
+<section class="footer">
+    <div class="container">
+        <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
+          <div class="col-md-4 d-flex align-items-center">
+            <a href="/" class="mb-3 me-2 mb-md-0 text-muted text-decoration-none lh-1">
+              <svg class="bi" width="30" height="24"><use xlink:href="#bootstrap"/></svg>
+            </a>
+            <span class="mb-3 mb-md-0 text-muted">&copy; Carlos García 2022</span>
+          </div>
+      
+          <ul class="nav col-md-4 justify-content-end list-unstyled d-flex">
+            <li class="contact__list"><a class="contact__link" href="https://github.com/CarlosGarciaWeb"><i class="fa-brands fa-github-alt fa-2x"></i>
+                </a>
+            </li>
+            <li class="contact__list"><a class="contact__link" href="https://www.linkedin.com/in/carlos-garciaram/"><i class="fa-brands fa-linkedin-in fa-2x"></i>
+                </a>
+            </li>
+            <li class="contact__list"><a class="contact__link" href="mailto:carlosagrh95@gmail.com"><i class="fa-regular fa-envelope fa-2x"></i></a>
+            </li>          
+        </ul>
+        </footer>
+      </div>
+</section>
 
 {% endblock content %}
