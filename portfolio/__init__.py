@@ -49,9 +49,25 @@ projects_list = [
         "name": "Portfolio - Carlos García",
         "thumb": "images/portfolio.png",
         "hero": "",
-        "categories": ["Python", "Flask", "MongoDB", "AWS"],
+        "categories": ["Python", "Flask", "AWS EC2"],
         "slug": "portfolio-website",
         "prod": "#"
+    },
+    {
+        "name": "Weekly Planner App",
+        "thumb": "images/planapp.png",
+        "hero": "",
+        "categories": ["Python", "Flask", "AWS EC2", "MongoDB"],
+        "slug": "planner-website",
+        "prod": "http://ec2-44-202-60-125.compute-1.amazonaws.com/"
+    },
+    {
+        "name": "Study Guide App",
+        "thumb": "images/studyapp.png",
+        "hero": "",
+        "categories": ["Python", "Flask", "AWS EC2", "MongoDB"],
+        "slug": "study-website",
+        "prod": "http://ec2-3-87-64-169.compute-1.amazonaws.com"
     }
 ]
 
