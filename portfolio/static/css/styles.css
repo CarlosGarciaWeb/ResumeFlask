@@ -55,7 +55,7 @@ strong {
 
 .scroll-down-arrow {
     left: 50%;
-    bottom: 20px;
+    bottom: 75px;
 }
 
 
@@ -87,10 +87,20 @@ strong {
 .scroll__project,
 .scroll__experiences,
 .scroll__recognitions,
+.scroll__recognition2,
 .scroll__contact,
+.scroll__contact2,
 .scroll__project__720 {
     position: relative;
     bottom: 40px;
+}
+
+.scroll__recognition2 {
+    bottom: 0;
+}
+
+.scroll__contact {
+    bottom: -250px;
 }
 
 .scroll__project__720 {
@@ -104,6 +114,14 @@ strong {
 
     .col__img {
         width: 90%;
+    }
+
+    .scroll__contact {
+        display: none;
+    }
+
+    .scroll__recognition2 {
+        display: none;
     }
 }
 

@@ -1,2 +1,5 @@
 .env
 Dockerfile
+*.cer
+portfolio-flask.cer
+.dockerignore
